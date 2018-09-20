@@ -1,0 +1,533 @@
+/*
+	Filename: form.css
+	Authors: Ethan Li and Nilay Sondagar
+	Date: June 14th, 2016
+	Purpose: A photo upload site for yearbook staff at MD
+*/
+
+/*-------------- GENERAL --------------*/
+html, body {
+	background-color: #263238;
+	color: white;
+	height: 100%;
+	font-family: "Roboto", sans-serif;
+}
+
+div {
+	word-wrap: break-word;
+}
+
+/*---------- LIGHTBOX RELATED ---------*/
+#lightbox {
+	display: none;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    margin: 0 auto;
+    width: 80%;
+    height: 60%;              
+    padding: 10px;
+    z-index: 2;
+    overflow:visible;
+}
+
+#lightboximage {
+	display: block;
+	margin: 0 auto;
+	max-height:80%;
+	max-width:80%;
+	border: solid #00BFA5 5px;
+}
+
+#unapprovedlightboximage {
+	display: block;
+	margin: 0 auto;
+	max-height:80%;
+	max-width:80%;
+	border: solid #D32F2F 5px;
+}
+
+#fade {
+	display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index:1;
+    opacity:.80;
+    transition: width 0.4s ease-in-out;
+}
+
+#imagebox {
+	position: relative;
+	margin: 10% auto;
+	margin-bottom: 5%;
+}
+
+#close {
+	display: none;
+	position: absolute;
+    top: 10px;
+    right: 1%;
+	text-align: center;
+    float: right; 
+	font-family: "Arial";
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background-color: #00BFA5;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	z-index: 3;
+}
+
+#dloadButton {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	right: 70px;
+	top: 8px;
+	width: 55px;
+	height: 55px;
+}
+
+#dlink {
+	width: 1px;
+	height: 1px;
+}
+
+#next {
+	display: none;
+	position: absolute;
+	right: 10px;
+	width: 90px;
+	height: 90px;
+	z-index: 3;
+}
+
+#previous {
+	display: none;
+	position: absolute;
+	left: 10px;
+	width: 90px;
+	height: 90px;
+	z-index: 3;
+}
+
+#editPic {
+	display: none;
+	right: 20%;
+	position: absolute;
+	z-index: 3;
+	font-family: "Roboto", sans-serif;
+}
+
+#editButton {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	font-family: "Roboto", sans-serif;
+}
+
+.hideEdit {
+	display: none;
+	right: 137px;
+	top: 61px;
+	position: absolute;
+	z-index: 3;
+	background-color: #37474F;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	padding: 1%;
+}
+
+.hideEditButton {
+	display: none;
+	right: 125px;
+	margin-bottom: 1.5%;
+	top: 12px;
+	position: absolute;
+	z-index: 3;
+}
+
+/*---------- NAV BAR -----------*/
+a {
+    display: block;
+    padding: 8px;
+    background-color: #37474F;
+}
+
+.nav ul {
+    list-style-type: none;
+    background-color: #37474F;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    transition-duration: 0.4s;
+}
+
+/* Change the link color on hover */
+.nav li a:hover {
+    background-color: #00BFA5;
+}
+
+li {
+	display: inline-block;
+}
+
+#search {
+    width: 370px;
+    height: 45px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-left: 40px;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    background-color: #00BFA5;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+#search:focus {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.radioaccess {
+	margin-left: 45px;
+}
+
+#go {
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	outline: none;
+	height: 45px;
+	width: 50px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+#go:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#downloadAll {
+	display: inline-block;
+	background-color: #00BFA5;
+	padding: 14px 16px;
+	margin: 10px;
+    margin-left: 40px;
+    padding: 12px;
+	font-size: 16px;
+	color: white;
+	border: none;
+	outline: none;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+#downloadAll:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#editAll {
+	display: inline-block;
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 12px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	text-decoration: none;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+#editAll:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+select {
+	position: absolute;
+	background-color: #00BFA5;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    width: 100px;
+    height: 45px;
+    color: white;
+    font-size: 12px;
+}
+
+/*--------------- IMAGES ---------------*/
+
+.container {
+	position: relative;
+    float: left;
+	display: inline-block;
+    vertical-align: middle;
+	border: solid #00BFA5;
+	margin: 1%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.needsApproval {
+	position: relative;
+    float: left;
+	display: inline-block;
+    vertical-align: middle;
+	border: solid #D32F2F;
+	margin: 1%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.image {
+	position: relative;
+    float: left;
+    width: 150px;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+#name {
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	background-color: #37474F;
+	margin: 0 auto;
+	width: 50%;
+	padding: 1%;
+}
+
+#desc {
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	background-color: #37474F;
+	margin: 0 auto;
+	width: 50%;
+	padding: 1%;
+}
+
+#complete {
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	display: inline-block;
+	padding: 12px;
+	margin-left: 40px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+#complete:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#complete2 {
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	display: inline-block;
+	padding: 12px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+#complete2:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.completeEdit {
+	background-color: #00BFA5;
+	display: block;
+	color: white;
+	border: none;
+	height: 45px;
+	width: 100px;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.completeEdit:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.editprop {
+	border: none;
+	outline: none;
+	padding: 5px;
+	margin-top: 2px;
+	width: 130px;
+	font-family: "Roboto", sans-serif;
+    background-color: #00BFA5;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 1%; 
+    transition: 0.2s ease-in-out;
+}
+
+.editprop2 {
+	border: none;
+	outline: none;
+	padding: 5px;
+	margin-top: 2px;
+	width: 135px;
+	font-family: "Roboto", sans-serif;
+    background-color: #37474F;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 1%; 
+    transition: 0.2s ease-in-out;
+}
+
+.editprop:focus {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.editprop2:focus {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*-------------- FORM CSS -------------*/
+
+.error {
+	color: red;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+	font-size: 50px;
+}
+
+a {
+	color: #00BFA5;
+	font-family: "Roboto", sans-serif;
+}
+
+textarea {
+	width: 60%;
+	height: 50px;
+	resize: none;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	background-color: #00BFA5;
+	color: #ffffff;
+	border-radius: 4px;
+	border:none;
+	outline: none;
+	margin: 6px;
+}
+
+#imageform {
+	background-color: #37474F;
+	color: white;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+	padding: 20px;
+	width: 550px;
+	height: 550px;
+	margin: auto;
+   	position: relative;
+   	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#fileupload {
+	width: 160px;
+}
+
+#imageform input[type=text] {
+	width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: #00BFA5;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    border-radius: 4px;
+    transition: 0.4s ease-in-out;
+}
+
+#imageform input[type=text]:focus {
+	width: 100%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#submit {
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 15px 37px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+button {
+	background-color: #00BFA5;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 15px 32px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#submit:hover {
+	background-color: #00695C;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+textarea {
+    transition: 0.4s ease-in-out;
+}
+
+textarea:focus {
+    width: 100%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
